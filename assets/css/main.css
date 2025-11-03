@@ -1,0 +1,396 @@
+/* main.css - basic placeholder styles */
+:root{
+  --bg:#000000;
+  --panel:#000000;
+  --muted:#9aa0a6;
+  --text:#e6e7e9;
+  /* modern accent color (purple) */
+  --accent:#de5c8e;
+}
+
+/* Load ChulaCharasNew font files placed in assets/fonts/Inter/ */
+@font-face {
+  font-family: 'ChulaCharasNew';
+  src: url('../fonts/Inter/ChulaCharasNewReg.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChulaCharasNew';
+  src: url('../fonts/Inter/ChulaCharasNewIta.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChulaCharasNew';
+  src: url('../fonts/Inter/ChulaCharasNewBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChulaCharasNew';
+  src: url('../fonts/Inter/ChulaCharasNewBoldIta.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: 'ChulaCharasNew', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  background:var(--bg);
+  color:var(--text);
+}
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+}
+.container {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+.site-nav { background: #111; color: #fff; }
+.site-nav .nav-inner { 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding:1.5rem 1.5rem !important;
+  min-height: 80px !important;
+}
+.site-nav .brand { 
+  color:#fff !important; 
+  font-weight:700 !important; 
+  text-decoration:none !important;
+  font-size: 1.5rem !important;
+  font-family: 'ChulaCharasNew', Arial, Helvetica, sans-serif !important;
+}
+.site-nav .nav-links { 
+  list-style:none !important; 
+  margin:0 !important; 
+  padding:0 !important; 
+  display:flex !important; 
+  gap:1.5rem !important; 
+}
+.site-nav .nav-links li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.site-nav .nav-links a { 
+  color:#ddd !important; 
+  text-decoration:none !important; 
+  padding:0.75rem 1.5rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  font-family: 'ChulaCharasNew', Arial, Helvetica, sans-serif !important;
+}
+.site-nav .nav-links a:hover { color:#fff !important; }
+
+/* Hero */
+.hero { background: linear-gradient(90deg,#8B2332  , #de5c8e); color:#fff; padding:2rem 0; }
+.hero .tagline { opacity:0.95; }
+
+/* Cards / grid */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+.card { background:#fff; border:1px solid #e6e6e6; padding:1rem; border-radius:6px; box-shadow:0 1px 2px rgba(0,0,0,0.03); }
+
+footer { text-align:center; color:#666; padding:1rem 0; margin-top:2rem; }
+
+/* Preloader (two gears spinner) */
+#preloader { position:fixed; left:0; top:0; right:0; bottom:0; background:#000; z-index:2000; display:flex; align-items:center; justify-content:center; }
+
+.gears{
+  width:48%;
+  display: inline-block;
+}
+.gears:first-child{
+  margin-right: 3%;
+}
+.gears-container{
+    width:150px; 
+    height: 150px;
+    font-size:24px;
+    padding: 9%;
+    position: relative; 
+    margin: 0px auto;
+}
+.gear-rotate{
+	width: 2em;
+	height: 2em;
+  top: 50%; 
+  left: 50%; 
+  margin-top: -1em;
+  margin-left: -1em;
+	background: #8B2332;
+	position: absolute;
+	border-radius: 1em;
+	-webkit-animation: 2s gear-rotate linear infinite;
+	-moz-animation: 2s gear-rotate linear infinite;
+	animation: 2s gear-rotate linear infinite;
+}
+.gear-rotate-left{
+  margin-top: -2.2em;
+  top: 50%;
+  width: 2em;
+	height: 2em;
+	background: #8B2332;
+	position: absolute;
+	border-radius: 1em;
+  -webkit-animation: 2s gear-rotate-left linear infinite;
+  -moz-animation: 2s gear-rotate-left linear infinite;
+  animation: 2s gear-rotate-left linear infinite;
+}
+
+.gear-rotate::before, .gear-rotate-left::before {
+	width: 2.8em;
+	height: 2.8em;
+	background: 
+    -webkit-linear-gradient(0deg,transparent 39%,#8B2332 39%,#8B2332 61%, transparent 61%),
+    -webkit-linear-gradient(60deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%),
+    -webkit-linear-gradient(120deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%);
+	background: 
+    -moz-linear-gradient(0deg,transparent 39%,#8B2332 39%,#8B2332 61%, transparent 61%),
+    -moz-linear-gradient(60deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%),
+    -moz-linear-gradient(120deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%);
+	background: 
+    -o-linear-gradient(0deg,transparent 39%,#8B2332 39%,#8B2332 61%, transparent 61%),
+    -o-linear-gradient(60deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%),
+    -o-linear-gradient(120deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%);
+	background: -ms-linear-gradient(0deg,transparent 39%,#8B2332 39%,#8B2332 61%, transparent 61%),-ms-linear-gradient(60deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%),-ms-linear-gradient(120deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%);
+	background: 
+      linear-gradient(0deg,transparent 39%,#8B2332 39%,#8B2332 61%, transparent 61%),
+    linear-gradient(60deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%),
+    linear-gradient(120deg,transparent 42%,#8B2332 42%,#8B2332 58%, transparent 58%);
+	position: absolute;
+	content:"";
+	top: -.4em;
+	left: -.4em;
+	border-radius:1.4em;
+}
+.gear-rotate::after, .gear-rotate-left::after {
+	width: 1em;
+	height: 1em;
+	background: #2B2B2B;
+	position: absolute;
+	content:"";
+	top: .5em;
+	left: .5em;
+	border-radius: .5em;
+}
+
+/*
+ * Keyframe Animations 
+ */ 
+
+@-webkit-keyframes gear-rotate {
+  0% { 
+    -webkit-transform: rotate(0deg);
+  }
+  100% { 
+    -webkit-transform: rotate(-180deg); 
+  }
+}
+
+@-moz-keyframes gear-rotate {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% { 
+    transform: rotate(-180deg); 
+  }
+}
+
+@keyframes gear-rotate {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(-180deg); 
+  }
+}
+
+@-webkit-keyframes gear-rotate-left {
+ 0% {
+   -webkit-transform: rotate(30deg); 
+  }
+  100% {
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@-moz-keyframes gear-rotate-left {
+ 0% { 
+   -webkit-transform: rotate(30deg); 
+  }
+  100% { 
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@keyframes gear-rotate-left {
+ 0% { 
+   -webkit-transform: rotate(30deg); 
+  }
+  100% { 
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+/* Make the site-nav sticky like template */
+.site-nav { position:fixed; top:0; left:0; right:0; z-index:1500; background:#000 !important; box-shadow:0 1px 8px #000; }
+.site-nav .nav-inner { max-width:1200px; margin:0 auto; }
+
+/* push page content below fixed nav */
+body { padding-top:80px; }
+
+/* Hero full-screen video area */
+.hero-full { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.hero-full::before{ content:""; position:absolute; inset:0; /* stronger dark at top so area under nav is solid black */ background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.35) 100%); z-index:2; }
+.video-bg{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+.hero-bg-video{ width:100%; height:100%; object-fit:cover; display:block; /* shift the focal point to the right so the 'moon' aligns with half.png */ object-position:75% center; }
+
+/* Ensure video covers the top fully and doesn't show two-tone under nav */
+.site-nav + .hero-full { margin-top:0 !important; padding-top:0 !important; }
+.hero-full { margin-top:0 !important; padding-top:0 !important; }
+.hero-full .container{ position:relative; z-index:3; }
+
+/* Fade-in animation used throughout */
+.keyframes fadeInUp { from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:none; } }
+@keyframes fadeInUp { from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:none; } }
+.fade-in { animation: fadeInUp 800ms ease both; }
+
+/* Dark panels and cards */
+.card { background:var(--panel); border:1px solid rgba(255,255,255,0.03); color:var(--text); }
+
+/* Make links and buttons match dark theme */
+a, a:visited { color:var(--text); }
+/* Primary/Accent colors switched to modern purple */
+.text-primary, .title.text-primary, .counter-icon .text-primary, .icon.text-primary { color:var(--accent) !important; }
+.bg-primary, .progress-bar.bg-primary { background:var(--accent) !important; }
+/* Default primary button: use maroon (#8B2332) by default */
+.btn-primary { background:#8B2332; border-color:#8B2332; color:#fff; }
+/* Swap behavior: use accent color on hover/active/focus and maroon as default */
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+/* Keep a clear focus ring that matches the accent color for accessibility */
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 .2rem rgba(222,92,142,0.18) !important; /* rgba of --accent */
+}
+.btn-outline-light { color:var(--text); border-color:rgba(255,255,255,0.08); }
+
+/* Section spacing similar to template */
+section { padding-top:3rem; padding-bottom:3rem; }
+
+/* typed text: gradient from maroon to accent */
+#typed {
+  font-weight:700;
+  /* gradient fill */
+  background: linear-gradient(90deg, #8B2332 0%, #de5c8e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* fallback */
+  display: inline-block; /* ensures background-clip behaves consistently */
+}
+
+/* Section spacing similar to template */
+section { padding-top:3rem; padding-bottom:3rem; }
+
+/* Make grid use Bootstrap columns fallback */
+.grid { display:block; }
+
+/* Responsive images */
+.img-fluid.rounded { max-width:100%; height:auto; }
+
+/* --------------------------------------------------
+   Responsive navbar: consistent dimensions across pages
+   - Uses viewport-aware clamp() values so height, font-size
+     and paddings scale with the user's screen.
+   - Applies globally to .site-nav and overrides earlier rules
+ -------------------------------------------------- */
+:root{
+  /* navbar sizing: min 56px, preferred 7vh, max 96px */
+  --nav-height: clamp(56px, 7vh, 96px);
+  --nav-h-padding: clamp(0.5rem, 2vw, 1.5rem);
+  --nav-brand-size: clamp(1rem, 2.5vw, 1.6rem);
+  --nav-link-size: clamp(0.9rem, 2vw, 1.35rem);
+}
+
+/* Main navbar container */
+.site-nav {
+  position: fixed; /* ensure consistent sticky behavior */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1500;
+  background: rgba(0,0,0,0.92); /* slightly translucent for depth */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.site-nav .nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--nav-h-padding);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-nav .brand {
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  font-size: var(--nav-brand-size) !important;
+  line-height: 1;
+}
+
+.site-nav .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  align-items: center;
+}
+
+.site-nav .nav-links a {
+  color: #ddd !important;
+  text-decoration: none !important;
+  font-size: var(--nav-link-size) !important;
+  padding: calc(var(--nav-height) * 0.18) calc(var(--nav-h-padding) * 0.6) !important;
+  font-weight: 400 !important;
+}
+
+.site-nav .nav-links a:hover { color: #fff !important; }
+
+/* Push page content below the fixed navbar using the variable height */
+body { padding-top: var(--nav-height); }
+
+@media (max-width: 768px) {
+  /* slightly tighter spacing on small screens */
+  .site-nav .nav-inner { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .site-nav .nav-links { gap: 0.6rem; }
+}
+
+/* End navbar rules */
